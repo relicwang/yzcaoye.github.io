@@ -39,7 +39,7 @@
       <!-- Main Content Section-->
       <div class="mainSection" id="Content">
       <iframe src="GoogleMap.html"; style='width: 800px; height:450px; margin-left:0px;'>      </iframe>
-      
+      <button type="button" id="share_my_location" onclick="confirmShareLoc()">Share Location</button>
       <!--<iframe src="steps_content.html"; style='width: 785px; height:510px; margin-bottom:-50px;'></iframe>-->
       
       </div>
@@ -47,6 +47,21 @@
     
     
   </div>
+ 
+<script>
+function confirmShareLoc() {	
+	var txt;
+    var r =  confirm("Do you want to send the location information to family members?");
+    if (r == true) {
+        var confirmed =  alert("Shared Successfully");
+     } else {
+        txt = "You pressed Cancel!";
+    }  
+}
+
+
+</script>
+ 
    
   </body>
 </html>
