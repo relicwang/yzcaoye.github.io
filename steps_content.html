@@ -25,6 +25,12 @@
 #step_content{
      background-color: white;}
 
+button {
+	height: 60px;
+	width: 180px;
+	font-size: 20px;
+}
+
 </style>
 <script src="http://www.w3schools.com/lib/w3data.js"></script>
 <script>
@@ -44,7 +50,7 @@ var chart1=echarts.init(document.getElementById("con1")); //显示区域的id
 
 option = {
     title : {
-        text: 'Steps' //标题
+        text: '' //标题
     },
     tooltip : {
         trigger: 'axis',
@@ -71,18 +77,21 @@ option = {
 
     xAxis : [
         {
+            name: 'Time',
             type : 'category',
             boundaryGap : false,
-            data : ['0','4','8','12','16','20','24','Time'] 
+            data : ['0','4','8','12','16','20','24'] 
         }
     ],
     yAxis : [
-        {
+        {   
+            name: "Steps",
             type : 'value',
             scale: true,
             axisLabel : {
                 formatter: '{value}' 
             }
+
         }
     ],
 
@@ -90,13 +99,13 @@ option = {
         {
             name:'',
             type:'line',
-            data: [ 0, 0, 110, 550, 230, 320, 600 ],
+            data: [ 0, 0, 110,  230, 320, 550, 600 ],
 
-            markLine : {
-                data : [
-                    {type : 'average', name: 'Average'}
-                ]
-            }
+            // markLine : {
+            //     data : [
+            //         {type : 'average', name: 'Average'}
+            //     ]
+            // }
         }
     ]
 };
@@ -106,19 +115,22 @@ chart1.setOption(option);
 
 
 <div >
-<div id="step_content" style="width:400px; height:500px; text-align:center; border:solid 1px; position:absolute;top:0%;left:0%;">
-<div id="step_content" style="text-align: center; font-size: 24px; vertical-align: center; height: 49px; border-bottom:solid 1px;"><p>Result</p></div>
-<p style="font-size: 22px;"> 668 / 1000 </p>
-<p style="font-size: 22px;"> Daily Steps </p>
+<div id="step_content" style="width:400px; height:500px; text-align:left; border:solid 1px; position:absolute;top:0%;left:0%;">
+<div id="step_content" style="text-align: center; font-size: 24px; vertical-align: left; height: 41.5px; border-bottom:solid 1px;"><p>Result</p></div>
+<p style="font-size: 22px;"> &nbsp;&nbsp;&nbsp;600 / 1000 </p>
+<p style="font-size: 22px;"> &nbsp;&nbsp;&nbsp;Daily Steps </p>
 <br>
-<p style="font-size: 20px;"> Distance: 67.5 km </p>
-<p style="font-size: 20px;"> Calories Burned: 763.2 kCal </p>
-<p style="font-size: 20px;"> Flights Climbed: 23 floors </p>
+<p style="font-size: 20px;"> &nbsp;&nbsp;&nbsp;Distance: 2.5 km </p>
+<p style="font-size: 20px;"> &nbsp;&nbsp;&nbsp;Calories Burned: 763.2 kCal </p>
+<p style="font-size: 20px;"> &nbsp;&nbsp;&nbsp;Flights Climbed: 23 floors </p>
+<br>
+&nbsp;&nbsp;&nbsp;<button onclick="window.location.href='steps_content_history.html' ">View Monthly Data</button>
 </div>
 
 
 <div id="step_content" style=" font-size: 22px; font-weight: bolder; text-align: center; width:400px; height:500px; border:black solid 1px; position:absolute;top:0%;left:50%;">
-<p>Today's Step</p>
+    <div id="step_content" style="text-align: center; font-size: 24px; vertical-align: left; height: 41.5px; border-bottom:solid 0px;"><p>Daily Steps</p></div>
+
 <div id="con1" style=" width:400px; height:400px;border-top:black solid 1px;">
 </div>
 </div>
